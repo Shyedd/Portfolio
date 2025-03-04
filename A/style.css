@@ -1,0 +1,1074 @@
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap');
+
+@font-face {
+    font-family: "Thunder";
+    src: url(font/Thunder-BoldLC.ttf);
+}
+
+@font-face {
+    font-family: "Figtree";
+    src: url(font/Figtree-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Figtree italic";
+    src: url(font/Figtree-Italic-VariableFont_wght.ttf);
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+nav,
+header,
+hgroup,
+menu,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "Figtree";
+    text-wrap: pretty;
+    font-weight: 400;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    position: relative;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ******************* fin reset ******************** */
+
+body {
+    background-color: #111218;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bghome {
+    background: url(img/bg_header.webp);
+    background-size: cover;
+    background-position: center;
+    width: -webkit-fill-available!important;
+    height: 100vh!important;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bghome_mobile {
+    display: none;
+    background: url(img/bg_header_mobile.png);
+    background-size: cover;
+    background-position: center;
+    width: -webkit-fill-available;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px 0 98px 0;
+    width: -webkit-fill-available;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 99;
+    background: linear-gradient(180deg, #111218, rgba(17, 18, 24, 0));
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+    transition-duration: 0.15s;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+}
+
+.nav-menu {
+    display: flex;
+    position: relative;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 56px;
+    border: 1px solid #323236;
+    background: #111218;
+}
+
+.gradient {
+    position: absolute;
+    border-radius: 56px;
+    opacity: 0.4;
+    background: linear-gradient(180deg, #3A7DFF 26.41%, #E7659B 67.1%, #FF774C 105.27%);
+    filter: blur(16px);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.menu-item {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 100px;
+    overflow: hidden;
+    transition-duration: 0.2s;
+}
+
+.menu-item span {
+    position: relative;
+    color: white;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 1;
+    transition-duration: 0.2s;
+}
+
+.cercle {
+    background-color: white;
+    width: 8px;
+    height: 8px;
+    border-radius: 32px;
+    z-index: 0;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition-duration: 0.2s;
+}
+
+.menu-item:hover span {
+    color: #111218;
+}
+
+.menu-item:hover .cercle {
+    transform: scale(15);
+    top: 18px;
+}
+
+.social {
+    display: flex;
+    padding: 8px;
+    position: relative;
+    border-radius: 100px;
+    overflow: hidden;
+    transition-duration: 0.2s;
+}
+
+.menu-item:hover {
+    transition-delay: 100ms;
+    box-shadow: 0px 0px 12px #ffffff80;
+}
+
+.social:hover {
+    transition-delay: 100ms;
+    box-shadow: 0px 0px 12px #ffffff80;
+}
+
+.cerclesocial {
+    background-color: white;
+    width: 8px;
+    height: 8px;
+    border-radius: 32px;
+    z-index: 0;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    transition-duration: 0.2s;
+}
+
+.social:hover .cerclesocial {
+    transform: scale(15);
+    top: 18px;
+}
+
+.logoDesc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: end;
+    width: 454px;
+    z-index: 1;
+}
+
+.descLucas {
+    color: white;
+    font-family: "Figtree";
+    font-size: 24px;
+    margin-top: 16px;
+    z-index: 0;
+}
+
+.endGradient {
+    width: -webkit-fill-available;
+    height: 189px;
+    background: linear-gradient(180deg, rgba(17, 18, 24, 0) 0%, #111218 100%);
+    margin-top: -188px;
+}
+
+.content {
+    margin-top: -40px;
+    max-width: 1220px;
+    margin: auto;
+}
+
+.dots {
+    background: url(img/bg_dots.webp);
+    background-size: 100%;
+    mix-blend-mode: overlay;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: absolute;
+    z-index: -1;
+}
+
+#propos,
+#projets,
+#experiences,
+#passions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: "Thunder";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    z-index: 0;
+}
+
+.suph2 {
+    text-align: center;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #111218;
+    font-family: "The Nautigal", cursive;
+    font-size: 32px;
+    width: fit-content;
+    height: fit-content;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    background: linear-gradient(177deg, #3A7DFF 36.61%, #E7659B 68.85%, #FF774C 99.1%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+    margin-top: -24px;
+}
+
+.textContent {
+    color: white;
+    text-align: center;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 40px;
+    text-wrap: balance;
+    width: 1000px;
+}
+
+.photos {
+    display: flex;
+    margin-top: 32px;
+}
+
+.photos .img {
+    position: relative;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 2px 32px 0px rgba(0, 0, 0, 0.32);
+    width: 216px;
+    height: 216px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.photos .img img{
+    width: 100%;
+}
+
+
+.photos .img::after {
+    content: ''; /* Obligatoire pour afficher le pseudo-Ã©lÃ©ment */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px; /* Les coins arrondis doivent correspondre */
+    border: 1.5px solid rgba(255, 255, 255, 0.5); /* Couleur initiale de la bordure */
+    mix-blend-mode: overlay; /* Fusion avec l'arriÃ¨re-plan */
+    pointer-events: none; /* Ã‰vite les problÃ¨mes d'interaction avec la bordure */
+  }
+
+.allproject {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    width: 280px;
+    height: 348px;
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #111218;
+    border: 2px solid #111218;
+    overflow: hidden;
+}
+
+.background {
+    overflow: hidden;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: -webkit-fill-available;
+    background-color: #111218;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    transition-duration: 0.2s;
+}
+
+.background video,
+.background img {
+    opacity: 0.7;
+    width: 100%;
+    height: -webkit-fill-available;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 12px;
+    height: 100vh;
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+
+.card::after {
+    content: ''; /* Obligatoire pour afficher le pseudo-Ã©lÃ©ment */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px; /* Les coins arrondis doivent correspondre */
+    border: 1.5px solid rgba(255, 255, 255, 0.5); /* Couleur initiale de la bordure */
+    mix-blend-mode: overlay; /* Fusion avec l'arriÃ¨re-plan */
+    pointer-events: none; /* Ã‰vite les problÃ¨mes d'interaction avec la bordure */
+  }
+
+.date {
+    color: white;
+    font-family: "Figtree italic";
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.titleproject {
+    color: white;
+    font-family: "Thunder";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+.projectcontent {
+    opacity: 0;
+    color: white;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    transition-duration: 0.2s;
+}
+
+.tag {
+    display: flex;
+    gap: 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 4px 8px;
+    backdrop-filter: blur(6px);
+    border: 1px solid hsl(0deg 0% 100% / 16%);
+}
+
+.tag span {
+    color: white;
+    font-family: 'Figtree';
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 124%;
+}
+
+.gradienthover {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: -webkit-fill-available;
+    border-radius: 12px;
+    opacity: 0;
+    background: linear-gradient(180deg, #3A7DFF 26.41%, #E7659B 67.1%, #FF774C 105.27%);
+    filter: blur(16px);
+    transition-duration: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03)!important;
+}
+
+.card:hover .projectcontent {
+    opacity: 1;
+    margin-top: 8px;
+}
+
+.card:hover .gradienthover {
+    opacity: 0.4;
+}
+
+.card:hover .cardContent {
+    background-color: #11121866;
+}
+
+.allexperiences {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.exp {
+    display: flex;
+    width: 550px;
+    /* height: 274px; */
+    border-radius: 12px;
+    background: #111218;
+    overflow: hidden;
+}
+
+.exp::after {
+    content: ''; /* Obligatoire pour afficher le pseudo-Ã©lÃ©ment */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px; /* Les coins arrondis doivent correspondre */
+    border: 1.5px solid rgba(255, 255, 255, 0.5); /* Couleur initiale de la bordure */
+    mix-blend-mode: overlay; /* Fusion avec l'arriÃ¨re-plan */
+    pointer-events: none; /* Ã‰vite les problÃ¨mes d'interaction avec la bordure */
+  }
+
+.exp img {
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.contentexp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.expcontent {
+    color: white;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.textdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.btnlieu {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.lieu {
+    color: white;
+    text-align: end;
+    font-family: 'Figtree italic';
+    font-size: 12px;
+}
+
+.btn {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    border-radius: 40px;
+    border: 1px solid white;
+    background: white;
+    color: #111218;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.btn:hover {
+    background: #111218;
+    color: white;
+    transition-duration: 0.2s;
+}
+
+.btn:hover rect,
+.btn:hover path {
+    stroke: white;
+}
+
+.photos2 {
+    display: flex;
+    margin-top: 32px;
+}
+
+.photos2 .img {
+    position: relative;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 2px 32px 0px rgba(0, 0, 0, 0.32);
+    width: 342px;
+    height: 192px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.photos2 .img img{
+    width: 100%;
+}
+
+.photos2 .img:nth-child(3n) img{
+    margin-top: -220px;
+}
+
+.photos2 .img::after {
+  content: ''; /* Obligatoire pour afficher le pseudo-Ã©lÃ©ment */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px; /* Les coins arrondis doivent correspondre */
+  border: 1.5px solid rgba(255, 255, 255, 0.5); /* Couleur initiale de la bordure */
+  mix-blend-mode: overlay; /* Fusion avec l'arriÃ¨re-plan */
+  pointer-events: none; /* Ã‰vite les problÃ¨mes d'interaction avec la bordure */
+}
+#contact {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topGradient {
+    margin-bottom: -188px;
+    position: absolute;
+    width: 100vw;
+    height: 189px;
+    background: linear-gradient(0deg, rgba(17, 18, 24, 0) 0%, #111218 100%);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: #5B5C66;
+    text-align: center;
+    font-family: "Figtree";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 12px;
+}
+
+.bgcontact {
+    background: url(img/bg_header.webp);
+    background-size: cover;
+    background-position: center;
+    width: -webkit-fill-available!important;
+    height: 90vh!important;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bgcontact_mobile {
+    display: none;
+    background: url(img/bg_header.webp);
+    background-size: cover;
+    background-position: center;
+    width: -webkit-fill-available;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.mea {
+    font-family: "Figtree italic";
+    font-weight: 700;
+}
+
+
+/* Style pour le menu burger */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+
+/* Style pour le menu burger */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+
+/* Styles pour le menu en mode mobile */
+
+@media screen and (max-width: 800px) {
+    nav {
+        padding: 24px 0 98px 0;
+    }
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+    .bghome {
+        display: none;
+    }
+    .bghome_mobile {
+        display: block;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .logoDesc {
+        width: -webkit-fill-available;
+    }
+    .logo {
+        width: 340px;
+        margin-right: 40px;
+    }
+    .logo img {
+        width: -webkit-fill-available;
+    }
+    .descLucas {
+        text-align: center;
+        font-size: 18px;
+    }
+    section {
+        padding: 0 16px;
+    }
+    .textContent {
+        width: -webkit-fill-available;
+    }
+    .photos2 .img{
+        width: 192px;
+        height: 192px;
+    }
+    .photos2 .img img{
+        height: -webkit-fill-available;
+        object-fit: cover;
+    }
+    .photos2 .img:nth-child(3n) img{
+        margin-top: -20px!important;
+    }
+    .photos2 img:first-child {
+        transform: rotate(0deg)!important;
+        width: -webkit-fill-available;
+        margin-right: 0!important;
+    }
+    .allproject {
+        gap: 12px;
+    }
+    .card {
+        width: 172px;
+    }
+    .card:hover,
+    .card:active,
+    .card:visited {
+        transform: none;
+    }
+    .titleproject {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .projectcontent {
+        display: none;
+    }
+    .allexperiences {
+        gap: 16px;
+    }
+    .exp {
+        width: -webkit-fill-available;
+    }
+    .exp img {
+        width: 140px;
+    }
+    .expcontent {
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .btnlieu .btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    .lieu {
+        font-size: 12px;
+        width: 72px;
+    }
+    .bgcontact {
+        display: none;
+    }
+    .bgcontact_mobile {
+        display: block;
+    }
+    /*
+    .nav-menu {
+        display: none;
+    } */
+
+    .menu-item:nth-child(1), .menu-item:nth-child(2), .menu-item:nth-child(3), .menu-item:nth-child(4){
+        display: none;
+    }
+}
+
+.gradient-blur {
+    position: fixed;
+    z-index: 5;
+    inset: 0;
+    height: 24%;
+    pointer-events: none;
+    transform: rotate(180deg);
+}
+.gradient-blur > div, .gradient-blur::before, .gradient-blur::after {
+    position: absolute;
+    inset: 0;
+}
+.gradient-blur::after {
+    content: "";
+    z-index: 1;
+    backdrop-filter: blur(0.5px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%);
+}
+.gradient-blur > div:nth-of-type(6) {
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%);
+}
+.gradient-blur > div:nth-of-type(5) {
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%);
+}
+.gradient-blur > div:nth-of-type(4) {
+    z-index: 4;
+    backdrop-filter: blur(4px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%);
+}
+.gradient-blur > div:nth-of-type(3) {
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%);
+}
+.gradient-blur > div:nth-of-type(2) {
+    z-index: 6;
+    backdrop-filter: blur(16px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%);
+}
+.gradient-blur > div:nth-of-type(1) {
+    z-index: 7;
+    backdrop-filter: blur(32px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
+.gradient-blur::before {
+    content: "";
+    z-index: 8;
+    backdrop-filter: blur(64px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
+
+
+.gradient-blur2 {
+    position: fixed;
+    z-index: 5;
+    inset: auto 0 0 0;
+    height: 16%;
+    pointer-events: none;
+    background: linear-gradient(0deg, #111218, #00000000);
+    transition-duration: 0.5s;
+}
+.gradient-blur2 > div, .gradient-blur2::before, .gradient-blur2::after {
+    position: absolute;
+    inset: 0;
+}
+.gradient-blur2::after {
+    content: "";
+    z-index: 1;
+    backdrop-filter: blur(0.5px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 37.5%);
+}
+.gradient-blur2 > div:nth-of-type(6) {
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 12.5%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 0) 50%);
+}
+.gradient-blur2 > div:nth-of-type(5) {
+    z-index: 3;
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 62.5%);
+}
+.gradient-blur2 > div:nth-of-type(4) {
+    z-index: 4;
+    backdrop-filter: blur(4px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 37.5%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 0) 75%);
+}
+.gradient-blur2 > div:nth-of-type(3) {
+    z-index: 5;
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 87.5%);
+}
+.gradient-blur2 > div:nth-of-type(2) {
+    z-index: 6;
+    backdrop-filter: blur(16px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 62.5%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%);
+}
+.gradient-blur2 > div:nth-of-type(1) {
+    z-index: 7;
+    backdrop-filter: blur(32px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
+.gradient-blur2::before {
+    content: "";
+    z-index: 8;
+    backdrop-filter: blur(64px);
+    mask: linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
